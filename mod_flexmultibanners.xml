@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+type="module" version="3.0" client="site" method="upgrade">
+	<name>FlexBanners multiple banners</name>
+	<author>Paulius Danėnas</author>
+	<creationDate>2013/08/17</creationDate>
+	<copyright>Copyright (c)2009-2013 Paulius Danenas</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorEmail>danpaulius@gmail.com</authorEmail>
+	<version>3.0.6</version>
+	<description>This module shows multiple adverts in a flexible manner</description>
+	<files>
+		<filename module="mod_flexmultibanners">mod_flexmultibanners.php</filename>
+		<filename>index.html</filename>
+		<filename>swfobject.js</filename>
+		<filename>trans.gif</filename>
+		<folder>tmpl</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.mod_flexmultibanners.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic"
+			addfieldpath="/administrator/components/com_flexbanners/models/fields">
+				<field
+				name="locationid"
+				type="flexbannerlocation"
+				default=""
+				label="MOD_FLEXBANNER_LOCATIONID"
+				description="MOD_FLEXBANNER_LOCATIONIDD" />
+				<field name="loadlast" type="radio" class="btn-group" default="0" label="MOD_FLEXBANNER_LOADAFTER" description="MOD_FLEXBANNER_LOADAFTERD">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="enablecsa" type="radio" class="btn-group" default="0" label="MOD_FLEXBANNER_CSA" description="MOD_FLEXBANNER_CSAD">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="enabletrans" type="radio" class="btn-group" default="0" label="MOD_FLEXBANNER_FLASH" description="MOD_FLEXBANNER_FLASHD">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="enablenofollow" type="radio" class="btn-group" default="0" label="MOD_FLEXBANNER_NOFOLLOW" description="MOD_FLEXBANNER_NOFOLLOWD">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+			<fieldset name="advanced">
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field name="cache" type="list" default="0" label="MOD_FLEXBANNER_CACHE" description="MOD_FLEXBANNER_CACHED">
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>
